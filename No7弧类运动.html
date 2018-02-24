@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*圆周运动*/
+			body{
+				background: black;
+				height: 100%;
+			}
+			.moon{
+				display: inline-block;
+				width: 400px;
+				height: 400px;
+				margin-top: 200px;
+				background: url(../img/moon.jpg) no-repeat;
+				background-size: cover;
+			}
+			.rocket{
+				margin-left: 80px;
+				display: inline-block;
+				width: 130px;
+				height: 250px;
+				background: url(../img/rocket.png);
+				background-size:cover;
+				transform-origin: 330px 74px;
+				animation: run 1s infinite linear;
+			}
+			@keyframes run{
+				from{}
+				to{transform: rotate(1turn);}
+			}
+			/*椭圆运动*/
+			.iframe{
+				position: absolute;
+				top: 80px;
+				left: 1300px;
+				width: 600px;
+				height: 500px;
+				animation: iframeRun 1s infinite linear alternate;
+			}
+			.iframe .abc{
+				width: 150px;
+				height: 142px;
+				transform-origin:center 250%; /*必须把Y轴坐标设置成百分比形式*/
+				animation: run_1 2s infinite linear;
+			}
+			.iframe .abc img{
+				width: 100%;
+				height: auto;
+			}
+			@keyframes run_1{
+				from{}
+				to{
+					transform: rotate(-1turn);
+				}
+			}
+			@keyframes iframeRun{
+				from{}
+				to{
+					transform: translateY(200px);
+				}
+			}
+			/*弧形运动*/
+			.stoge{
+				position: relative;
+				width: 120px;
+				height: auto;
+				margin: 0 auto;
+				transform-origin: center top;
+				transform: rotate(30deg);
+				animation: sway 2.2s infinite alternate ease-in-out;  /*alternate定义往返属性*/
+			}
+			.stoge .watch{
+				width: 100%;
+				height: auto;
+			}
+			.stoge .second{
+				position: absolute;
+				width: 8%;
+				height: auto;
+				bottom: 11.5%;
+				left: 45.5%;
+				transform-origin: center 70%;
+				animation: second 60s infinite linear;	
+			}
+			@keyframes sway{
+				from{}
+				to{
+					transform: rotate(-30deg);
+				}
+			}
+			@keyframes second{
+				from{}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+	<!--圆周运动-->
+	<div>	
+		<div class="rocket"></div>
+		<div class="moon"></div>
+	</div>
+	<!--椭圆运动-->
+	<div class="iframe">	
+		<div class="abc">
+			<img src="img/warcraft.png" alt="" />
+		</div>
+	</div>
+	<!--弧形运动-->
+	<div class="stoge">
+		<img src="img/watch.png" alt="" class="watch"/>
+		<img src="img/seconds.png" alt=""  class="second"/>
+	</div>
+	</body>
+</html>

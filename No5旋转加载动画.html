@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旋转加载动画</title>
+		<style type="text/css">
+			#loading{
+				margin: 100px auto;
+				background: black;
+				width: 10em;
+				height: 10em;
+				border: 1em solid gainsboro;
+				border-left-color: red;
+				border-radius: 50%;
+				animation: loadEffect 1s infinite linear;
+			}
+			@keyframes loadEffect{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="loading"></div>
+	</body>
+</html>

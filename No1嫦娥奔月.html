@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>嫦娥奔月</title>
+		<style type="text/css">
+		body{
+			background: black;
+		}
+		.change{
+			display: block;
+			width: 400px;
+			height: 400px;
+			background: url(../img/moon.png) no-repeat center;
+			margin: 50px auto;
+			border:1em solid rgb(255,255,255,.8);
+			background-size: cover;
+			/*cover:把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+			背景图像的某些部分也许无法显示在背景定位区域中。
+			contain:	把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
+			percentage:以父元素的百分比来设置背景图像的宽度和高度。*/
+		}
+		.change img{
+			display: block;
+			width: 300px;
+			height: 284px;
+			opacity: 0;
+			transform: translate(-100px,-100px);  /*translate 转化*/
+			transition: opacity 1s ease-in-out 0.5s,transform 1s ease-in-out
+		}
+		.change img:hover{
+			opacity: 1;
+			transform: translate(0px,0px);
+			transition: opacity 1s ease-in-out,transform 1s ease-in-out 0.1s
+		}
+
+		</style>
+	</head>
+	<body>
+		<a href="#" class="change" target="_blank">
+			<img src="img/change.png" alt="" />
+		</a>
+	</body>
+</html>

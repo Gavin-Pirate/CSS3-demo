@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#layout{
+				width: 300px;
+				position: relative;
+			}
+			.box:before{
+				content:"";
+				position: absolute; /*利用绝对定位脱离文档流*/
+				top: 0;
+				right: 0;
+				border-style: solid;
+				border-width:0px;
+				border-color: rgba(0,0,0,0.2) #fff;
+				border-radius: 0 0 0 4px;
+				box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+				transition: all 0.4s ease-out;
+			}
+			.box:hover:before{ /*鼠标悬停状态下的box元素的前一个节点元素，即刚刚创建的元素*/
+				border-right-width: 80px;
+				border-bottom-width: 80px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="layout">
+		<div class="box">
+			<img src="img/1.jpg" alt="" />
+		</div>
+	</div>
+	</body>
+</html>
